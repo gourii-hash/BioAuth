@@ -35,9 +35,11 @@
         }
         
         .logo {
-            width: 50px;
+            width: 40px;
             height: 50px;
             border-radius: 50%;
+            object-fit: cover;
+            transform: scale(1.2);
         }
         
         .navbar h1 {
@@ -187,42 +189,42 @@
 
     <!-- Navigation Bar -->
     <div class="navbar">
-        <img src="https://thumbs.dreamstime.com/z/colorful-fingerprint-id-app-icon-identification-system-authentication-security-biometrics-sensors-scanner-logo-sign-symbol-197455145.jpg" alt="Logo" class="logo">
-        <h1>BioAuth</h1>
+        <img src="https://thumbs.dreamstime.com/z/colorful-fingerprint-id-app-icon-identification-system-authentication-security-biometrics-sensors-scanner-logo-sign-symbol-197455145.jpg" alt="Logo" class="logo" style="height: 40px; margin-right: 20px;">
+        <h1> BioAuth </h1>
     </div>
 
     <!-- Main Content -->
-    <div class="container">
-        <button class="auth-btn" onclick="redirectToAuth()">Start Authentication</button>
+    <div class=" container ">
+        <button class="auth-btn " onclick="redirectToAuth() ">Start Authentication</button>
 
-        <div class="circle-container">
-            <div class="row">
-                <div class="circle-item">
-                    <button onclick="window.location.href='political_parties.html'">
-                        <img src="https://www.eci.gov.in/newimg/icons/candidate-polparty.png" alt="Political parties">
+        <div class="circle-container ">
+            <div class="row ">
+                <div class="circle-item ">
+                    <button onclick="window.location.href='political_parties.html' ">
+                        <img src="https://www.eci.gov.in/newimg/icons/candidate-polparty.png " alt="Political parties ">
                     </button>
                     <p>Political Parties</p>
                 </div>
 
-                <div class="circle-item">
-                    <button onclick="alert('Voter Education')">
-                        <img src="https://www.eci.gov.in/newimg/icons/voter-education.png" alt="Voter Education">
+                <div class="circle-item ">
+                    <button onclick="alert( 'Voter Education') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/voter-education.png " alt="Voter Education ">
                     </button>
                     <p>Voter Education</p>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="circle-item">
-                    <button onclick="alert('Myth vs Reality')">
-                        <img src="https://www.eci.gov.in/newimg/icons/voter-services.png" alt="Myth vs Reality">
+            <div class="row ">
+                <div class="circle-item ">
+                    <button onclick="alert( 'Myth vs Reality') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/voter-services.png " alt="Myth vs Reality ">
                     </button>
                     <p>Myth vs Reality</p>
                 </div>
 
-                <div class="circle-item">
-                    <button onclick="alert('Track Authentication')">
-                        <img src="https://www.eci.gov.in/newimg/icons/election.png" alt="Track Authentication">
+                <div class="circle-item ">
+                    <button onclick="alert( 'Track Authentication') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/election.png " alt="Track Authentication ">
                     </button>
                     <p>Track Authentication</p>
                 </div>
@@ -231,18 +233,18 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-        <img src="images/BioAuth.png" alt="Footer Logo">
-        <div class="footer-links">
-            <a href="#">Contact</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+    <div class="footer ">
+        <img src="images/BioAuth.png " alt="Footer Logo ">
+        <div class="footer-links ">
+            <a href="# ">Contact</a>
+            <a href="# ">Privacy</a>
+            <a href="# ">Terms</a>
         </div>
     </div>
 
     <script>
         function redirectToAuth() {
-            window.location.href = "Vote_auth.html";
+            window.location.href = "Vote_auth.html ";
         }
     </script>
 
