@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingerprint Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Fingerprint Authentication</h2>
+        <p>Tap the button below to authenticate using your fingerprint.</p>
+        <button id="scanButton">Scan Fingerprint</button>
+        <p id="result-msg"></p>
+    </div>
+
+    <script>
+        document.getElementById("scanButton").addEventListener("click", async function() {
+            if (!window.PublicKeyCredential) {
+                document.getElementById("result-msg").textContent = "❌ WebAuthn not supported on this browser.";
+                return;
+            }
+
+            try {
+                const credential = await navigator.credentials.create({
+                    publicKey: {
+                        challenge: new Uint8Array(32),
+                        rp: {
+                            name: "Voting System"
+                        },
+                        user: {
+                            id: new Uint8Array(16),
+                            name: "voter@example.com",
+                            displayName: "Voter",
+                        },
+                        pubKeyCredParams: [{
+                            alg: -7,
+                            type: "public-key"
+                        }],
+                        authenticatorSelection: {
+                            authenticatorAttachment: "platform",
+                            userVerification: "preferred"
+                        },
+                        timeout: 60000,
+                        attestation: "none"
+                    }
+                });
+
+                if (credential) {
+                    document.getElementById("result-msg").textContent = "✅ Fingerprint Verified! You can vote now.";
+                    document.getElementById("result-msg").style.color = "green";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("result-msg").textContent = "❌ Authentication Failed!";
+                document.getElementById("result-msg").style.color = "red";
+            }
+        });
+    </script>
+</body>
+
+</html>

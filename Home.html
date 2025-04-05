@@ -1,0 +1,201 @@
+<style>
+    /* Basic Styles */
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    /* Navigation Bar */
+    
+    .navbar {
+        width: 100%;
+        color: rgb(55, 53, 53);
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .navbar h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+    /* Main Content */
+    
+    .container {
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .auth-btn {
+        background: #031c38;
+        color: white;
+        padding: 30px 50px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 10px;
+        transition: background 0.3s;
+    }
+    
+    .auth-btn:hover {
+        background: #0056b3;
+    }
+    /* Circle (Curvy Square) Button Container */
+    
+    .circle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .row {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .circle-item {
+        text-align: center;
+    }
+    
+    .circle-item button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    .circle-item img {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        /* Curvy square style */
+        object-fit: cover;
+        border: 2px solid #ccc;
+        transition: transform 0.3s, border-color 0.3s;
+    }
+    
+    .circle-item img:hover {
+        transform: scale(1.1);
+        border-color: #012e5f;
+    }
+    
+    .circle-item p {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+    }
+    /* Footer Styling Inspired by ECI */
+    
+    .footer {
+        width: 100%;
+        background: #333;
+        color: #fff;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: -100px;
+        left: 0;
+        transition: bottom 0.5s;
+    }
+    
+    .footer img {
+        width: 120px;
+        height: auto;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        margin-left: 15px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .footer-links a:hover {
+        color: #fff;
+    }
+</style>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="C:\Users\USER\Desktop\votingsystem\images\BioAuth.png" alt="Logo" class="logo ">
+        <h1>BioAuth</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container ">
+        <button class="auth-btn " onclick="redirectToAuth() ">Start Authentication</button>
+
+        <!-- Circle Buttons in Two Rows -->
+        <div class="circle-container ">
+            <!-- First Row -->
+            <div class="row ">
+                <div class="circle-item ">
+                    <button onclick="window.location.href='political_parties.html'">
+                        <img src="https://www.eci.gov.in/newimg/icons/candidate-polparty.png " alt="Face Recognition ">
+                    </button>
+                    <p>Political parties</p>
+
+                </div>
+                <div class="circle-item ">
+                    <button onclick="alert( 'Fingerprint Scan Selected') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/voter-education.png " alt="Fingerprint Scan ">
+                    </button>
+                    <p>Voter Education</p>
+                </div>
+            </div>
+            <!-- Second Row -->
+            <div class="row ">
+                <div class="circle-item ">
+                    <button onclick="alert( 'Iris Scan Selected') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/voter-services.png " alt="Iris Scan ">
+                    </button>
+                    <p>Myth vs Reality</p>
+                </div>
+                <div class="circle-item ">
+                    <button onclick="alert( 'Voice Recognition Selected') ">
+                        <img src="https://www.eci.gov.in/newimg/icons/election.png " alt="Voice Recognition ">
+                    </button>
+                    <p>Track Authentication</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToAuth() {
+            window.location.href = "Vote_auth.html ";
+        }
+    </script>
+
+</body>
+
+</html>
